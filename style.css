@@ -1,0 +1,166 @@
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  color:#ff9ad5;
+  background:url('https://i.imgur.com/PKrRzYk.gif') center/cover fixed;
+
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  z-index:-1;
+  pointer-events:none;
+}
+
+/* ENTER SCREEN (TELA PRETA TOTAL) */
+.enter-screen{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+  cursor:pointer;
+  transition:1s;
+}
+
+.enter-screen h1{
+  color:#ff6ec7;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{opacity:0.5;}
+  50%{opacity:1;}
+}
+
+.fade-out{
+  opacity:0;
+  pointer-events:none;
+}
+
+/* SEÇÕES */
+.page,
+.servers{
+  min-height:100vh;
+  padding:140px 25px 120px;
+  display:flex;
+  flex-direction:column;
+  gap:60px;
+}
+
+/* SEPARAÇÃO ENTRE SEÇÕES */
+#home{
+  margin-bottom:160px;
+}
+
+#team{
+  margin-bottom:160px;
+}
+
+/* TITULOS */
+.glitch{
+  text-align:center;
+  font-size:2.8em;
+  margin-bottom:80px;
+}
+
+/* CARD HOME (SEM VAZAMENTO) */
+.card{
+  max-width:800px;
+  width:100%;
+  margin:0 auto;
+  background:rgba(255,255,255,0.08);
+  padding:30px;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.card pre{
+  white-space:pre-wrap;
+  word-break:break-word;
+  overflow-wrap:anywhere;
+  line-height:1.6;
+}
+
+/* TEAM GRID */
+.team-grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+  margin-top:20px;
+}
+
+/* CARDS TEAM */
+.bio-block{
+  background:rgba(255,255,255,0.08);
+  padding:22px;
+  border-radius:20px;
+  text-align:center;
+}
+
+/* IMAGEM */
+.bio-img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:2px solid #ff6ec7;
+  margin-bottom:12px;
+}
+
+/* TEXTO BIO */
+.bio-block pre{
+  white-space:pre-wrap;
+  word-break:break-word;
+  overflow-wrap:anywhere;
+  text-align:left;
+  background:rgba(0,0,0,0.4);
+  padding:12px;
+  border-radius:10px;
+  font-size:13px;
+  margin-top:10px;
+}
+
+/* BOTÃO */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 20px;
+  background:#ff6ec7;
+  border-radius:20px;
+  color:white;
+  text-decoration:none;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:25px;
+  opacity:0.7;
+}
+
+/* SCROLL REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
